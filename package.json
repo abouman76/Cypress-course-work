@@ -8,6 +8,7 @@
         "react-dom": "^15.5.4"
     },
     "devDependencies": {
+        "cypress": "^7.5.0",
         "json-server-auth": "^2.0.2",
         "react-scripts": "0.9.5"
     },
