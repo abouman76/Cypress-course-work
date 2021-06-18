@@ -83,7 +83,7 @@ describe("filter functionality test cases using UI", () => {
 // the code example has also hardcoded code in _route handler_ which is not best practice.
 // Should use fixtures. Check fixture folder and files.
 
-describe.only("filter functionality test cases using data from API", () => {
+describe("filter functionality test cases using data from API", () => {
   beforeEach(() => {
     cy.intercept(
       {
