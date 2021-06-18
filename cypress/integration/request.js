@@ -1,5 +1,5 @@
 /// <reference types="Cypress" />
-// original code from tutorial
+// original code from tutorial, NEW code, just scroll down
 
 // describe("request command suite", () => {
 //   it("Get request", () => {
@@ -43,33 +43,22 @@
 
 describe("JWT request", () => {
   before(() => {
-    cy.request({
-      method: "POST",
-      url: "http://localhost:8080/signup",
-      body: {
-        email: "test@mail.com",
-        password: "Ab123456",
-        firstname: "Olivier",
-        lastname: "Monge",
-        age: 32,
-      },
-    }).then((response) => {
-      // cy.log("resp:", response.body.accessToken);
-      cy.wrap(response.body.accessToken).as("token");
-    });
+    // Cypress.Commands
+    cy.signUp();
   });
   after(() => {
+    cy.deleteUsers();
     // cy.log("teardown");
-    cy.request("GET", "http://localhost:8080/users").then((response) => {
-      cy.log("Response", response.body.forEach);
-      response.body.forEach((user) => {
-        // cy.log("User", user.email);
-        cy.request({
-          method: "DELETE",
-          url: `http://localhost:8080/users/${user.id}`,
-        });
-      });
-    });
+    // cy.request("GET", "http://localhost:8080/users").then((response) => {
+    //   cy.log("Response", response.body.forEach);
+    //   response.body.forEach((user) => {
+    //     // cy.log("User", user.email);
+    //     cy.request({
+    //       method: "DELETE",
+    //       url: `http://localhost:8080/users/${user.id}`,
+    //     });
+    //   });
+    // });
   });
   it("SECURED API request", () => {
     cy.get("@token").then((token) => {
