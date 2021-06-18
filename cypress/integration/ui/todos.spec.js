@@ -63,7 +63,7 @@ describe("Todo UI testing", () => {
   beforeEach(() => {
     cy.visit("/");
   });
-  it.only("Should add a new Todo correctly", () => {
+  it("Should add a new Todo correctly", () => {
     cy.intercept("POST", "http://localhost:8080/todos").as("postRequest");
     cy.addNewTodo("todo 1");
     cy.wait("@postRequest").then((xhr) => {
@@ -84,11 +84,11 @@ describe("Todo UI testing", () => {
     // check commands.js with added if statement
     cy.addNewTodo("");
   });
-  // afterEach(() => {
-  //   cy.get("body").then(($element) => {
-  //     if ($element.find(".delete-item").length > 0) {
-  //       cy.get(".delete-item").click({ multiple: true });
-  //     }
-  //   });
-  // });
+  afterEach(() => {
+    cy.get("body").then(($element) => {
+      if ($element.find(".delete-item").length > 0) {
+        cy.get(".delete-item").click({ multiple: true });
+      }
+    });
+  });
 });

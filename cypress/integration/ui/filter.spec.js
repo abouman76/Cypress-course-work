@@ -115,18 +115,18 @@ describe("filter functionality test cases using data from API", () => {
     cy.visit("/");
   });
   it("Should filter the completed Todos correctly", () => {
-    // cy.contains("Complete").click();
-    // cy.url().should("contain", "/complete");
-    // cy.get(".todo-checkbox").each((eachTodo) => {
-    //   cy.wrap(eachTodo).should("be.checked");
-    // });
+    cy.contains("Complete").click();
+    cy.url().should("contain", "/complete");
+    cy.get(".todo-checkbox").each((eachTodo) => {
+      cy.wrap(eachTodo).should("be.checked");
+    });
   });
 
   it("Should filter the active Todos correctly", () => {
-    // cy.contains("Active").click();
-    // cy.url().should("contain", "/active");
-    // cy.get(".todo-checkbox").each((eachTodo) => {
-    //   cy.wrap(eachTodo).should("not.be.checked");
-    // });
+    cy.contains("Active").click();
+    cy.url().should("contain", "/active");
+    cy.get(".todo-checkbox").each((eachTodo) => {
+      cy.wrap(eachTodo).should("not.be.checked");
+    });
   });
 });
