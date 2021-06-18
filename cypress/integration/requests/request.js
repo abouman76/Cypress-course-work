@@ -1,46 +1,7 @@
 /// <reference types="Cypress" />
-// ORIGINAL code from tutorial, NEW code, just scroll down.
-// THIS CODE I ADDED AS AN EXTRA EXERCISE!
+// ORIGINAL code from tutorial ==> just scroll down.
 
-// describe("request command suite", () => {
-//   it("Get request", () => {
-//     cy.request("http://localhost:8080/todos?id=1").then((response) => {
-//       cy.log(response.body);
-//       //expect(response.status).to.be.eq(200);
-//       //expect(response.duration).to.be.below(20000);
-//       expect(response.body[0].isComplete).to.be.false;
-//     });
-//   });
-// });
-
-// KAN ook zo, door een object te maken in the request
-// describe("request command suite", () => {
-//   it("Get request", () => {
-//     cy.request({
-//       method: "GET",
-//       url: "http://localhost:8080/todos",
-//       qs: { id: 1 },
-//       //with qs you add the parameters that you want to send along with the request
-//     }).then((response) => {
-//       cy.log(response.statusText);
-//       expect(response.body[0].isComplete).to.be.false;
-//     });
-//   });
-// });
-
-// token via Postman ophalen en toepassing => manier 2
-// it("SECURED API request", () => {
-//   cy.request({
-//     method: "GET",
-//     url: "http://localhost:8080/courses",
-//     headers: {
-//       Authorization:
-//         "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InRlc3RTZWN1cmVBUElAbWFpbC5jb20iLCJpYXQiOjE2MjI3MDUxNDQsImV4cCI6MTYyMjcwODc0NCwic3ViIjoiNSJ9.ZgBRHqA69TRqOq_joJ71ESB2oGt_jLF5M_X-qN5NEPM",
-//     },
-//   });
-// });
-
-// Deterministic test with set-up and teardown!
+// Deterministic test with set-up and teardown! Code i added as an extra Exercise!
 
 describe("JWT request", () => {
   before(() => {
@@ -127,3 +88,43 @@ describe("request command suite", () => {
     });
   });
 });
+
+// part of the ORIGINAL code from tutorial!
+
+// describe("request command suite", () => {
+//   it("Get request", () => {
+//     cy.request("http://localhost:8080/todos?id=1").then((response) => {
+//       cy.log(response.body);
+//       //expect(response.status).to.be.eq(200);
+//       //expect(response.duration).to.be.below(20000);
+//       expect(response.body[0].isComplete).to.be.false;
+//     });
+//   });
+// });
+
+// KAN ook zo, door een object te maken in the request
+// describe("request command suite", () => {
+//   it("Get request", () => {
+//     cy.request({
+//       method: "GET",
+//       url: "http://localhost:8080/todos",
+//       qs: { id: 1 },
+//       //with qs you add the parameters that you want to send along with the request
+//     }).then((response) => {
+//       cy.log(response.statusText);
+//       expect(response.body[0].isComplete).to.be.false;
+//     });
+//   });
+// });
+
+// token via Postman ophalen en toepassing => manier 2
+// it("SECURED API request", () => {
+//   cy.request({
+//     method: "GET",
+//     url: "http://localhost:8080/courses",
+//     headers: {
+//       Authorization:
+//         "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InRlc3RTZWN1cmVBUElAbWFpbC5jb20iLCJpYXQiOjE2MjI3MDUxNDQsImV4cCI6MTYyMjcwODc0NCwic3ViIjoiNSJ9.ZgBRHqA69TRqOq_joJ71ESB2oGt_jLF5M_X-qN5NEPM",
+//     },
+//   });
+// });
