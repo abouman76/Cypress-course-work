@@ -10,11 +10,14 @@
   "devDependencies": {
     "cypress": "^7.5.0",
     "json-server-auth": "^2.0.2",
-    "react-scripts": "0.9.5"
+    "react-scripts": "0.9.5",
+    "start-server-and-test": "^1.12.5"
   },
   "scripts": {
     "start:frontend": "react-scripts start",
     "start:server": "json-server -p 8080 db.json -m ./node_modules/json-server-auth -r routes.json",
+    "start": "npm-run-all --parallel start:server start:frontend",
+    "cy.run": "npx cypress run --record --key 12314c28-acfc-4145-8eaa-84dfc1845068",
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject",
