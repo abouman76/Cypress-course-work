@@ -70,6 +70,7 @@ describe("Todo UI testing", () => {
       expect(xhr.request.body.name).to.eql("todo 1");
     });
     cy.get(".todo-item").last().should("contain.text", "todo 1");
+    cy.log("Hello GitHub Integration");
   });
   it("Should be able to toggle the status of a todo correctly", () => {
     cy.addNewTodo("todo 2");
